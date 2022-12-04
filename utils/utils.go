@@ -1,5 +1,10 @@
 package utils
 
+import (
+	"bufio"
+	"os"
+)
+
 func Check(e error) {
 	if e != nil {
 		panic(e)

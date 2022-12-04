@@ -13,9 +13,12 @@ func TestSumIntSlice(t *testing.T) {
 }
 
 func BenchmarkSumIntSlice(b *testing.B) {
-	for i := 0; i < 100000; i++ {
-		SumIntSlice([]int{1, 2, 3})
-	}
+	count := 10000
+	b.Run("sumIntSlice", func(b *testing.B) {
+		for i := 0; i < count; i++ {
+			SumIntSlice([]int{1, 2, 3})
+		}
+	})
 }
 
 // 0.0002311 ns/op for loop
