@@ -18,7 +18,7 @@ func TestDay2(t *testing.T) {
 	})
 
 	t.Run("first puzzle", func(t *testing.T) {
-		input := utils.ReadFile("input_2_1.txt")
+		input := utils.ReadFileAsSlice("input_2_1.txt")
 		result := rockPaperScissors(input, false)
 
 		if result != 9651 {
@@ -36,7 +36,7 @@ func TestDay2(t *testing.T) {
 	})
 
 	t.Run("second puzzle", func(t *testing.T) {
-		input := utils.ReadFile("input_2_1.txt")
+		input := utils.ReadFileAsSlice("input_2_1.txt")
 		result := rockPaperScissors(input, true)
 
 		if result != 10560 {

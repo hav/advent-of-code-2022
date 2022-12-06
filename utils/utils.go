@@ -2,6 +2,7 @@ package utils
 
 import (
 	"bufio"
+	"io/ioutil"
 	"os"
 )
 
@@ -19,11 +20,16 @@ func SumIntSlice(slice []int) int {
 	return total
 }
 
-func ReadFile(fileName string) []string {
+func ReadFile(fileName string) string {
+	input, err := ioutil.ReadFile(fileName)
+	Check(err)
+	return string(input)
+}
+
+func ReadFileAsSlice(fileName string) []string {
 	input, err := os.Open(fileName)
 	Check(err)
 	defer input.Close()
-
 	lines := []string{}
 	scanner := bufio.NewScanner(input)
 

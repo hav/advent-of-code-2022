@@ -9,7 +9,7 @@ import (
 )
 
 func buildElves() []int {
-	input := utils.ReadFile("input_1_1.txt")
+	input := utils.ReadFileAsSlice("input_1_1.txt")
 
 	elves := []int{}
 	elfItems := []int{}

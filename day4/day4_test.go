@@ -22,7 +22,7 @@ func TestDay4(t *testing.T) {
 	})
 
 	t.Run("first puzzle", func(t *testing.T) {
-		input := utils.ReadFile("input_4_1.txt")
+		input := utils.ReadFileAsSlice("input_4_1.txt")
 
 		overlap := overlaps(input)
 		// this should fail and print the actual value

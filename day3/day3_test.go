@@ -22,7 +22,7 @@ func TestDay3(t *testing.T) {
 	})
 
 	t.Run("first puzzle", func(t *testing.T) {
-		input := utils.ReadFile("input_3_1.txt")
+		input := utils.ReadFileAsSlice("input_3_1.txt")
 		dups := findDups(input)
 		val := toPrio(dups)
 
@@ -49,7 +49,7 @@ func TestDay3(t *testing.T) {
 	})
 
 	t.Run("second puzzle", func(t *testing.T) {
-		input := utils.ReadFile("input_3_1.txt")
+		input := utils.ReadFileAsSlice("input_3_1.txt")
 		groups := groupElves(input, 3)
 		commons := findCommons(groups)
 		prios := toPrio(commons)
@@ -60,7 +60,7 @@ func TestDay3(t *testing.T) {
 }
 
 func BenchmarkFindCommons(b *testing.B) {
-	input := utils.ReadFile("input_3_1.txt")
+	input := utils.ReadFileAsSlice("input_3_1.txt")
 	groups := groupElves(input, 3)
 	b.Run("findCommons", func(b *testing.B) {
 		for i := 0; i < 1000; i++ {
@@ -70,7 +70,7 @@ func BenchmarkFindCommons(b *testing.B) {
 }
 
 func BenchmarkFindDups(b *testing.B) {
-	input := utils.ReadFile("input_3_1.txt")
+	input := utils.ReadFileAsSlice("input_3_1.txt")
 
 	b.Run("findDups", func(b *testing.B) {
 		for i := 0; i < 1000; i++ {
